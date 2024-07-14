@@ -25,6 +25,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('export').onclick = exportToCSV;
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            registration.onupdatefound = () => {
+                const installingWorker = registration.installing;
+                installingWorker.onstatechange = () => {
+                    if (installingWorker.state === 'installed') {
+                        if (navigator.serviceWorker.controller) {
+                            const updateNotification = document.createElement('div');
+                            updateNotification.innerHTML = `
+                                <div style="position: fixed; bottom: 10px; right: 10px; background: #ff9800; color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+                                    新しいバージョンがあります。<button id="reload">更新</button>
+                                </div>
+                            `;
+                            document.body.appendChild(updateNotification);
+
+                            document.getElementById('reload').addEventListener('click', () => {
+                                installingWorker.postMessage({ action: 'skipWaiting' });
+                            });
+                        }
+                    }
+                };
+            };
+        });
+        let refreshing;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                window.location.reload();
+                refreshing = true;
+            }
+        });
+    }
 });
 
 function handleTaskButton(taskId) {
@@ -102,15 +134,4 @@ function exportToCSV() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}
-
-// PWA設定
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        }, error => {
-            console.log('Service Worker registration failed:', error);
-        });
-    });
 }
