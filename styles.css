@@ -42,8 +42,8 @@ h1, h2 {
 #tasks button {
     display: block;
     margin: 10px 0;
-    padding: 20px 40px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: #007acc; /* アイコンの青色に合わせて */
     border: none;
     border-radius: 8px;
