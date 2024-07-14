@@ -71,7 +71,8 @@ function handleTaskButton(taskId) {
         // 既存のタスクを終了
         taskLog.push({
             taskId: activeTask,
-            endTime: jstTime
+            time: jstTime,
+            action: '終了'
         });
         deactivateButton(activeTask);
     }
@@ -81,7 +82,8 @@ function handleTaskButton(taskId) {
         activeTask = taskId;
         taskLog.push({
             taskId: taskId,
-            startTime: jstTime
+            time: jstTime,
+            action: '開始'
         });
         activateButton(taskId);
         updateCurrentTaskDisplay(taskId, jstTime);
@@ -121,17 +123,18 @@ function updateLogDisplay() {
     const logContainer = document.getElementById('log');
     logContainer.innerHTML = taskLog.map(entry => {
         const task = tasks.find(t => t.id === entry.taskId).name;
-        return `<p>${task}: ${entry.startTime || ''} - ${entry.endTime || ''}</p>`;
+        return `<p>${task}: ${entry.time} - ${entry.action}</p>`;
     }).join('');
 }
 
 function exportToCSV() {
-    const csvContent = 'data:text/csv;charset=utf-8,' + taskLog.map(entry => {
+    const csvHeader = 'タスク名,ボタン押下時刻,開始/終了\n';
+    const csvContent = taskLog.map(entry => {
         const task = tasks.find(t => t.id === entry.taskId).name;
-        return `${task},${entry.startTime || ''},${entry.endTime || ''}`;
+        return `${task},${entry.time},${entry.action}`;
     }).join('\n');
     
-    const encodedUri = encodeURI(csvContent);
+    const encodedUri = encodeURI('data:text/csv;charset=utf-8,' + csvHeader + csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
     link.setAttribute('download', 'tasks.csv');

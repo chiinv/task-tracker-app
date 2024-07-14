@@ -3,86 +3,111 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #d3e0f0; /* アイコンの背景色に合わせて */
-    color: #000000; /* 黒色のテキストカラー */
+    background-color: #f0f4f8;
+    color: #333;
 }
 
 #app {
     text-align: center;
     max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
 }
 
-h1, h2 {
-    color: #007acc; /* アイコンの青色に合わせて */
-}
-
-#current-task {
+header {
     margin-bottom: 20px;
 }
 
+h1 {
+    color: #007acc;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#current-task-section, #tasks-section, #log-section {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #007acc;
+    margin: 0 0 10px;
+}
+
 #current-task-name {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
 }
 
 #current-task-time {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
 }
 
 #tasks {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 #tasks button {
-    display: block;
-    margin: 5px 0;
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 14px;
-    background-color: #007acc; /* アイコンの青色に合わせて */
+    background-color: #007acc;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    color: #ffffff; /* 白色のテキストカラー */
+    color: #fff;
     transition: background-color 0.3s ease;
 }
 
 #tasks button:active, #tasks button.active {
-    background-color: #005ea1; /* 押された時の色を濃い青色に */
-    color: #ffffff; /* 白色のテキストカラー */
+    background-color: #005ea1;
 }
 
-#export, #reset {
-    margin-top: 10px;
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007acc; /* アイコンの青色に合わせて */
+    background-color: #007acc;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    color: #ffffff; /* 白色のテキストカラー */
+    color: #fff;
     transition: background-color 0.3s ease;
 }
 
-#export:hover, #reset:hover {
-    background-color: #005ea1; /* ホバー時の色を濃い青色に */
+footer button:hover {
+    background-color: #005ea1;
 }
 
 #log {
+    max-height: 200px;
+    overflow-y: auto;
     text-align: left;
-    max-width: 800px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.9); /* 背景色を白色にして透明度を少し持たせる */
+    background: rgba(255, 255, 255, 0.9);
     padding: 10px;
     border-radius: 8px;
-    overflow-y: auto;
-    max-height: 300px;
 }
 
 #log p {
     margin: 5px 0;
+    font-size: 14px;
 }

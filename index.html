@@ -9,18 +9,29 @@
 </head>
 <body>
     <div id="app">
-        <h1>タスク記録アプリ</h1>
-        <div id="current-task">
-            <h2 id="current-task-name">タスク未選択</h2>
-            <p id="current-task-time"></p>
-        </div>
-        <div id="tasks">
-            <!-- タスクボタンはJavaScriptで動的に追加 -->
-        </div>
-        <button id="export">CSV出力</button>
-        <button id="reset">リセット</button> <!-- リセットボタンを追加 -->
-        <h2>過去のログ</h2>
-        <div id="log"></div>
+        <header>
+            <h1>タスク記録アプリ</h1>
+        </header>
+        <main>
+            <section id="current-task-section">
+                <h2 id="current-task-name">タスク未選択</h2>
+                <p id="current-task-time"></p>
+            </section>
+            <section id="tasks-section">
+                <h2>タスク一覧</h2>
+                <div id="tasks">
+                    <!-- タスクボタンはJavaScriptで動的に追加 -->
+                </div>
+            </section>
+            <section id="log-section">
+                <h2>過去のログ</h2>
+                <div id="log"></div>
+            </section>
+        </main>
+        <footer>
+            <button id="export">CSV出力</button>
+            <button id="reset">リセット</button> <!-- リセットボタンを追加 -->
+        </footer>
     </div>
     <script src="app.js"></script>
 </body>
