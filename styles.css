@@ -65,21 +65,22 @@ h2 {
 #tasks button {
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #007acc;
+    background-color: #cccccc; /* 押されていないボタンの背景色 */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    color: #fff;
+    color: #333;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #tasks button.active {
     background-color: #ff9800; /* 押されているボタンの色を変更 */
     transform: scale(1.1); /* 押されているボタンを少し大きくする */
+    color: #fff; /* 押されているボタンのテキスト色を変更 */
 }
 
 #tasks button:hover {
-    background-color: #005ea1;
+    background-color: #b3b3b3; /* 押されていないボタンのホバー色 */
 }
 
 footer {
