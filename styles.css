@@ -79,10 +79,6 @@ h2 {
     color: #fff; /* 押されているボタンのテキスト色を変更 */
 }
 
-#tasks button:hover {
-    background-color: #b3b3b3; /* 押されていないボタンのホバー色 */
-}
-
 footer {
     margin-top: 20px;
     display: flex;
