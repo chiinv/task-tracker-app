@@ -14,6 +14,34 @@ const tasks = [
 let activeTask = null;
 let taskLog = [];
 
+// Pull-to-Refreshを無効にするためのJavaScriptコード
+window.addEventListener('load', () => {
+    if ('ontouchstart' in window) {
+        let lastTouchY = 0;
+        let preventPullToRefresh = false;
+
+        document.addEventListener('touchstart', (e) => {
+            if (e.touches.length !== 1) return;
+            lastTouchY = e.touches[0].clientY;
+            preventPullToRefresh = window.pageYOffset === 0;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            const touchY = e.touches[0].clientY;
+            const touchYDelta = touchY - lastTouchY;
+            lastTouchY = touchY;
+
+            if (preventPullToRefresh) {
+                preventPullToRefresh = false;
+                if (touchYDelta > 0) {
+                    e.preventDefault();
+                    return;
+                }
+            }
+        }, { passive: false });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const tasksContainer = document.getElementById('tasks');
     
