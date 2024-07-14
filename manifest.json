@@ -1,9 +1,10 @@
 {
     "name": "タスク記録アプリ",
     "short_name": "タスク記録",
-    "start_url": ".",
+    "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#282c34",
+    "theme_color": "#61dafb",
     "description": "タスクの開始と終了を記録するアプリ",
     "icons": [
         {
