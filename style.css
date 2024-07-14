@@ -5,8 +5,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #282c34;
-    color: #ffffff;
+    background-color: #d3e0f0; /* アイコンの背景色に合わせて */
+    color: #000000; /* 黒色のテキストカラー */
 }
 
 #app {
@@ -15,7 +15,7 @@ body {
 }
 
 h1, h2 {
-    color: #61dafb;
+    color: #007acc; /* アイコンの青色に合わせて */
 }
 
 #current-task {
@@ -44,40 +44,40 @@ h1, h2 {
     margin: 10px 0;
     padding: 20px 40px;
     font-size: 18px;
-    background-color: #61dafb;
+    background-color: #007acc; /* アイコンの青色に合わせて */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: #282c34;
+    color: #ffffff; /* 白色のテキストカラー */
     transition: background-color 0.3s ease;
 }
 
 #tasks button:active, #tasks button.active {
-    background-color: #21a1f1;
-    color: #ffffff;
+    background-color: #005ea1; /* 押された時の色を濃い青色に */
+    color: #ffffff; /* 白色のテキストカラー */
 }
 
 #export {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #61dafb;
+    background-color: #007acc; /* アイコンの青色に合わせて */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: #282c34;
+    color: #ffffff; /* 白色のテキストカラー */
     transition: background-color 0.3s ease;
 }
 
 #export:hover {
-    background-color: #21a1f1;
+    background-color: #005ea1; /* ホバー時の色を濃い青色に */
 }
 
 #log {
     text-align: left;
     max-width: 800px;
     margin: 20px auto;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9); /* 背景色を白色にして透明度を少し持たせる */
     padding: 10px;
     border-radius: 8px;
     overflow-y: auto;
