@@ -70,10 +70,15 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#tasks button:active, #tasks button.active {
+#tasks button.active {
+    background-color: #ff9800; /* 押されているボタンの色を変更 */
+    transform: scale(1.1); /* 押されているボタンを少し大きくする */
+}
+
+#tasks button:hover {
     background-color: #005ea1;
 }
 
