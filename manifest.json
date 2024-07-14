@@ -3,8 +3,8 @@
     "short_name": "タスク記録",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#282c34",
-    "theme_color": "#61dafb",
+    "background_color": "#d3e0f0",
+    "theme_color": "#007acc",
     "description": "タスクの開始と終了を記録するアプリ",
     "icons": [
         {
@@ -14,6 +14,11 @@
         },
         {
             "src": "images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "images/Task.png",
             "sizes": "512x512",
             "type": "image/png"
         }
