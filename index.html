@@ -9,10 +9,16 @@
 <body>
     <div id="app">
         <h1>タスク記録アプリ</h1>
+        <div id="current-task">
+            <h2 id="current-task-name">タスク未選択</h2>
+            <p id="current-task-time"></p>
+        </div>
         <div id="tasks">
             <!-- タスクボタンはJavaScriptで動的に追加 -->
         </div>
         <button id="export">CSV出力</button>
+        <h2>過去のログ</h2>
+        <div id="log"></div>
     </div>
     <script src="app.js"></script>
 </body>

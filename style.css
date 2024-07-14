@@ -1,15 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: #282c34;
+    color: #ffffff;
 }
 
 #app {
     text-align: center;
+    max-width: 800px;
+}
+
+h1, h2 {
+    color: #61dafb;
+}
+
+#current-task {
+    margin-bottom: 20px;
+}
+
+#current-task-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+#current-task-time {
+    font-size: 18px;
+    margin: 0;
 }
 
 #tasks button {
@@ -17,10 +37,40 @@ body {
     margin: 10px auto;
     padding: 10px 20px;
     font-size: 16px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #282c34;
+}
+
+#tasks button:active, #tasks button.active {
+    background-color: #21a1f1;
+    color: #ffffff;
 }
 
 #export {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #282c34;
+}
+
+#log {
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#log p {
+    margin: 5px 0;
 }
