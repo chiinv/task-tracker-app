@@ -20,11 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     tasks.forEach(task => {
         const button = document.createElement('button');
         button.textContent = task.name;
-        button.onclick = () => handleTaskButton(task.id);
+        button.onclick = (event) => {
+            event.preventDefault(); // ボタンを押してもスクロールされないようにする
+            handleTaskButton(task.id);
+        };
         tasksContainer.appendChild(button);
     });
 
     document.getElementById('export').onclick = exportToCSV;
+    document.getElementById('reset').onclick = () => location.reload(); // リセットボタンの動作を追加
 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js').then(registration => {
