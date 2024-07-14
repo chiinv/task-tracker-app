@@ -7,6 +7,7 @@ body {
     margin: 0;
     background-color: #f0f4f8;
     color: #333;
+    overscroll-behavior: contain; /* Pull-to-Refreshを無効にする */
 }
 
 #app {
