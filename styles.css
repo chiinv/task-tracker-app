@@ -74,7 +74,7 @@ h2 {
 }
 
 #tasks button.active {
-    background-color: #ff9800; /* 押されているボタンの色を変更 */
+    background-color: #007acc; /* 押されているボタンの色を変更 */
     transform: scale(1.1); /* 押されているボタンを少し大きくする */
     color: #fff; /* 押されているボタンのテキスト色を変更 */
 }
