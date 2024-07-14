@@ -11,6 +11,7 @@ const tasks = [
     { id: 10, name: 'タスク10' },
 ];
 
+const CACHE_NAME = 'task-tracker-cache-v1.1';
 let activeTask = null;
 let taskLog = [];
 
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('export').onclick = exportToCSV;
+
+    // CACHE_NAMEを表示
+    document.getElementById('cache-name').textContent = `Cache Name: ${CACHE_NAME}`;
 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js').then(registration => {

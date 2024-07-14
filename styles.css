@@ -86,3 +86,10 @@ h1, h2 {
 #log p {
     margin: 5px 0;
 }
+
+#cache-name {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
