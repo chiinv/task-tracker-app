@@ -32,16 +32,23 @@ h1, h2 {
     margin: 0;
 }
 
+#tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #tasks button {
     display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px 0;
+    padding: 20px 40px;
+    font-size: 18px;
     background-color: #61dafb;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     color: #282c34;
+    transition: background-color 0.3s ease;
 }
 
 #tasks button:active, #tasks button.active {
@@ -55,9 +62,14 @@ h1, h2 {
     font-size: 16px;
     background-color: #61dafb;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     color: #282c34;
+    transition: background-color 0.3s ease;
+}
+
+#export:hover {
+    background-color: #21a1f1;
 }
 
 #log {
