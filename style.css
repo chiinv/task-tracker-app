@@ -20,6 +20,7 @@ h1, h2 {
 
 #current-task {
     margin-bottom: 20px;
+    min-height: 60px;  /* 固定高さを設定 */
 }
 
 #current-task-name {
