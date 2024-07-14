@@ -11,7 +11,7 @@ const tasks = [
     { id: 10, name: 'タスク10' },
 ];
 
-const CACHE_NAME = 'task-tracker-cache-v1';
+const CACHE_NAME = 'task-tracker-cache-v1.1';
 let activeTask = null;
 let taskLog = [];
 
